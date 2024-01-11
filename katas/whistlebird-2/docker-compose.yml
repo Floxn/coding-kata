@@ -12,4 +12,10 @@ services:
       - POSTGRES_USER=whistlebird
       - POSTGRES_DB=postgres
   api:
-    build: services/api
+    build:
+      context: ./
+      dockerfile: services/api/Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - POSTGRES_URL=postgresql://whistlebird:Whistlebird1337@postgres:5432/postgres
