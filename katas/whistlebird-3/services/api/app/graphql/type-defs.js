@@ -19,5 +19,6 @@ export const schema = `
   }
   type Mutation {
     post(message: String!): Success
+    user(name: String!, password: String!): Success
   }
 `
