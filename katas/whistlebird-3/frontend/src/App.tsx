@@ -1,14 +1,32 @@
 import useSWR from 'swr'
 
 const fetcher = async (url: string) => {
-  const res = await fetch(url)
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `{
+        posts {
+          message,
+          created_at,
+          user {
+            name
+          }
+        }
+      }`
+    })
+  })
   const { data } = await res.json()
+  console.log(data)
   return data as { message: string, created_at: string, user: { name: string } }[]
 }
 
 function App() {
-  const { data, error, isLoading } = useSWR('api/posts', fetcher, { refreshInterval: 1000 })
 
+  const { data, error, isLoading } = useSWR('api/graphql', fetcher, { refreshInterval: 1000 })
   return (
     <main className="max-w-3xl mx-auto p-2">
       <form onSubmit={() => {}} className="flex py-2 font-mono">
