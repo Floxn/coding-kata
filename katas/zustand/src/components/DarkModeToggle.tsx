@@ -1,10 +1,11 @@
 // DarkModeToggle.tsx
 import React from "react";
+import {useDarkModeStore} from "../store/darkModeStore";
 
 const DarkModeToggle: React.FC = () => {
   //TODO: This state should be updated dynamically with the toggle
-  const darkMode = false;
-  const toggleDarkMode = () => {}
+  const darkMode = useDarkModeStore((state) => state.darkMode)
+  const toggleDarkMode = useDarkModeStore((state) => state.toggleDarkMode)
 
   return (
     <div className={`p-4 ${darkMode ? " text-white" : "text-gray-800"}`}>
@@ -17,7 +18,7 @@ const DarkModeToggle: React.FC = () => {
             checked={darkMode}
             onChange={toggleDarkMode}
           />
-          <div className="block bg-gray-400 w-14 h-8 rounded-full"></div>
+          <div className="block bg-gray-400 w-14 h-8 rounded-full" onClick={toggleDarkMode}></div>
           <div
             className={`dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform ${
               darkMode ? "transform translate-x-6" : ""
