@@ -1,13 +1,19 @@
-import { FC, useState } from "react";
+import {FC, FormEvent, useState} from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import {useDarkModeStore} from "../store/darkModeStore";
+import {useTodoStore} from "../store/todoStore";
 
 const TodoList: FC = () => {
   const [todoValue, setTodoValue] = useState("");
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    addTodo(todoValue)
+    setTodoValue('')
+  };
   //TODO: This state should be updated dynamically with the toggle
   const darkMode = useDarkModeStore((state) => state.darkMode)
+  const addTodo = useTodoStore((state) => state.addTodo)
   return (
     <div
       className={`w-full max-w-md p-4 shadow-md rounded-lg min-w-32 ${
