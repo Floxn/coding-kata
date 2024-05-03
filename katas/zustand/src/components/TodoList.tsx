@@ -1,12 +1,13 @@
 import { FC, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
+import {useDarkModeStore} from "../store/darkModeStore";
 
 const TodoList: FC = () => {
   const [todoValue, setTodoValue] = useState("");
 
   const handleSubmit = () => {};
   //TODO: This state should be updated dynamically with the toggle
-  const darkMode = false;
+  const darkMode = useDarkModeStore((state) => state.darkMode)
   return (
     <div
       className={`w-full max-w-md p-4 shadow-md rounded-lg min-w-32 ${
