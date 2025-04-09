@@ -31,7 +31,6 @@ Ziel ist es neue CSS Techniken zu lernen und erste Erfahrungen damit zu sammeln.
    * benutze die vorbereite Komponente `Carousel` in `src/components/Carousel.jsx`
 4. @Layer: **HIER FEHLT MIR DIE IDEE ZU EINER AUFGABE**
    * importiere die `src/_layer.css` in die `src/App.jsx` und schau was passiert
-5. 
 
 ## React + TypeScript + Vite
 
