@@ -1,0 +1,27 @@
+@layer base, component, utilities;
+
+@import url('assets/fancy-extern-button-style-framework.css') layer(utilities);
+/* Base Layer */
+@layer base {
+    a {
+        color: darkblue;
+    }
+}
+
+/* Component Layer */
+@layer component {
+    .albums {
+        .album {
+            .album__details {
+                a {
+                    background-color: yellow;
+                    padding: .25rem .5rem;
+                    border-radius: .125rem;
+                    width: 100%;
+                    color: black;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

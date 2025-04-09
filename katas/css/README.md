@@ -29,7 +29,8 @@ Ziel ist es neue CSS Techniken zu lernen und erste Erfahrungen damit zu sammeln.
    * Wo ist nun der Unterschied zwischen den beiden Varianten?
 3. @supports: Erstelle ein einfaches Carousel mit Hilfe der aktuellen Möglichkeiten in Chrome 135 ([Doku hier](https://developer.chrome.com/blog/carousels-with-css?ref=dailydev)). Das Carousel soll aber nur bei Browsern angewendet werden, das diese Funktionaltät unterstützt. Für alle anderen Browser soll es ein Fallback geben. Das Fallback soll einfach ein Grid er Items mit 4 Spalten sein.
    * benutze die vorbereite Komponente `Carousel` in `src/components/Carousel.jsx`
-4. @Layer:
+4. @Layer: **HIER FEHLT MIR DIE IDEE ZU EINER AUFGABE**
+   * impoeriere die `src/_layer.css` in die `src/App.jsx`
 
 ## React + TypeScript + Vite
 
